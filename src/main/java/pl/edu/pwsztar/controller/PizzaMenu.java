@@ -7,6 +7,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import pl.edu.pwsztar.domain.model.Product;
+
+import java.util.List;
 
 @Controller
 public class PizzaMenu {
@@ -19,6 +22,15 @@ public class PizzaMenu {
 
         return new ResponseEntity("TEST", HttpStatus.OK);
     }
+
+    @CrossOrigin
+    @GetMapping(value = "/Test", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<List<Product>> getAllProducts() {
+
+        return new ResponseEntity("TEST", HttpStatus.OK);
+    }
+
+
 
 
 

@@ -2,16 +2,17 @@ package pl.edu.pwsztar.domain.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Repository;
 import pl.edu.pwsztar.domain.model.Product;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
-public class PizzaMenu {
+@Repository
+public class PizzaMenuRepository {
     public static final String MENU_KEY = "menu";
     private  final RedisTemplate template;
     @Autowired
-    PizzaMenu(RedisTemplate template){
+    PizzaMenuRepository(RedisTemplate template){
         this.template = template;
     }
     public void save(Product product){

@@ -1,11 +1,12 @@
 package pl.edu.pwsztar.domain.mapper;
 
 import com.google.gson.Gson;
+import org.springframework.stereotype.Component;
 import pl.edu.pwsztar.domain.model.BillDto;
 import pl.edu.pwsztar.domain.model.Product;
 
 import java.util.List;
-
+@Component
 public class BillCreator {
    private Gson gson = new Gson();
     public BillDto listOfProtuctsToBill(List<Product> productList,long customerId){
