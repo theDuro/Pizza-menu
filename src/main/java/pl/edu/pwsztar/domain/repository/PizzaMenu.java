@@ -25,7 +25,7 @@ public class PizzaMenu {
     }
 
     public void delete(long index){
-        //todo delte by index
+       template.opsForList().remove(MENU_KEY,1,getByIndex(index));
     }
 
     public List<Product> getListOfProducktsByIndexList(List<Long> indexList){

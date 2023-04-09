@@ -1,4 +1,4 @@
-package pl.edu.pwsztar.domain.dto;
+package pl.edu.pwsztar.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,9 +10,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BillDto {
-    private long userId;
-    private String customerName;
+    private long customerId;
     private String produckts;
+    //json -> list off produckts
     private double cost;
 
 }

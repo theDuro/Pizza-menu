@@ -11,5 +11,5 @@ public class Product {
     private String name;
     private String ingredients;
     private double cost;
-    private boolean produckOnlyForAdults;
+    private boolean isProduckOnlyForAdults;
 }
