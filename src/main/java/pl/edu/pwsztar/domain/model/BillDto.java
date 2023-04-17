@@ -1,18 +1,15 @@
 package pl.edu.pwsztar.domain.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@Getter
-@Setter
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BillDto {
+public class BillDto implements Serializable {
     private long customerId;
     private String produckts;
-    //json -> list off produckts
-    private double cost;
-
+    private BigDecimal cost;
 }

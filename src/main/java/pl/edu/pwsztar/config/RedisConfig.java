@@ -8,6 +8,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import pl.edu.pwsztar.domain.model.Product;
 
 @Configuration
 @EnableRedisRepositories
@@ -20,8 +21,8 @@ public class RedisConfig {
         return new JedisConnectionFactory(configuration);
     }
     @Bean
-    public RedisTemplate<String,Object> template(){
-       RedisTemplate<String,Object> template = new RedisTemplate<>();
+    public RedisTemplate<String, Product> template(){
+       RedisTemplate<String,Product> template = new RedisTemplate<>();
         template.setConnectionFactory(connectionFactory());
         template.setKeySerializer(new StringRedisSerializer());
         template.setHashKeySerializer(new StringRedisSerializer());

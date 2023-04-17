@@ -1,10 +1,11 @@
-package pl.edu.pwsztar.domain.mapper;
+package pl.edu.pwsztar.domain;
 
 import com.google.gson.Gson;
 import org.springframework.stereotype.Component;
 import pl.edu.pwsztar.domain.model.BillDto;
 import pl.edu.pwsztar.domain.model.Product;
 
+import java.math.BigDecimal;
 import java.util.List;
 @Component
 public class BillCreator {
@@ -17,11 +18,11 @@ public class BillCreator {
         return  billDto;
     }
 
-    private Double getSumCostOfProducts(List<Product> productList){
+    private BigDecimal getSumCostOfProducts(List<Product> productList){
         return productList
                 .stream()
-                .mapToDouble(Product::getCost)
-                .reduce(0.0,Double::sum);
+                .map(Product::getCost)
+                .reduce(BigDecimal.ZERO,BigDecimal::add);
 
     }
     private String listOfProductToJson(List<Product> productList){
