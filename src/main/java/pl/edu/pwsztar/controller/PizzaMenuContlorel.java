@@ -41,13 +41,13 @@ public class PizzaMenuContlorel {
     }
     @CrossOrigin
     @PostMapping(value = "/getBill", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<BillDto> getBillFromIndexList(@RequestBody List<Long> indexList) {
+    public ResponseEntity<BillDto> getBillFromIndexList(@RequestBody List<Integer> indexList) {
         return new ResponseEntity(pizzaMenuImp.getBillFronIndexList(indexList,1), HttpStatus.OK);
     }
   @CrossOrigin
   @PostMapping(value = "/Bill", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
   public ResponseEntity<BillDto> getBill() {
-    return new ResponseEntity(pizzaMenuImp.getBillFronIndexList(Arrays.asList(1L, 2L, 3L),1), HttpStatus.OK);
+    return new ResponseEntity(pizzaMenuImp.getBillFronIndexList(Arrays.asList(1, 2, 3),1), HttpStatus.OK);
   }
 
     @CrossOrigin

@@ -8,7 +8,7 @@ import java.util.Map;
 
 public interface PizzaMenu {
     public List<Product> getMenu();
-    public BillDto getBillFronIndexList(List<Long> listOfIndexes,long id);
+    public BillDto getBillFronIndexList(List<Integer> listOfIndexes,long id);
     public void addProduck(Product product);
     public void delteProductById(long id);
 

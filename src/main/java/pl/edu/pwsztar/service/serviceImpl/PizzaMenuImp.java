@@ -21,12 +21,12 @@ public class PizzaMenuImp implements PizzaMenu {
     }
     @Override
     public List<Product> getMenu() {
-        return pizzaMenuRepository.getAll();
+        return pizzaMenuRepository.findAll();
     }
     @Override
-    public BillDto getBillFronIndexList(List<Long> listOfIndexes, long id) {
+    public BillDto getBillFronIndexList(List<Integer> listOfIndexes, long id) {
         return billCreator.listOfProtuctsToBill(
-                pizzaMenuRepository.getListOfProducktsByIndexList(listOfIndexes),id
+                pizzaMenuRepository.getProductListByListOfIndex(listOfIndexes),id
         );
     }
     @Override
@@ -35,7 +35,7 @@ public class PizzaMenuImp implements PizzaMenu {
     }
     @Override
     public void delteProductById(long id) {
-        pizzaMenuRepository.delete(id);
+        pizzaMenuRepository .deleteProduct((int) id);
     }
 
 
